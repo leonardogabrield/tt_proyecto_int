@@ -1,0 +1,328 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+:root {
+    --primary-color: 120, 61, 7;
+    --secondary-color: 255, 165, 0;
+    font-size: 16px;
+}
+::placeholder {
+    opacity: 0.6;
+}
+::-ms-input-placeholder {
+    opacity: 0.6;
+}
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+}
+/****************************  Global  ******************************/
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(255, 243, 205, 1);
+    color: rgba(var(--primary-color), 1);
+    font-weight: 300;
+}
+a {
+    color: rgba(var(--primary-color), 1);
+    font-weight: 300;
+    text-decoration: none;
+}
+a:hover {
+    color: rgba(var(--primary-color), 0.7);
+}
+strong {
+    font-weight: 500;
+}
+h1 {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+hr {
+    margin: 4rem 0;
+}
+footer {
+    background-color: rgba(var(--primary-color), 0.20);
+    color: rgba(var(--primary-color), 1);
+    padding: 3rem 0 3rem 0;
+}
+/****************************  Common  ******************************/
+.row-flex {
+    display: flex;
+    gap: 120px;
+}
+.column {
+    flex-grow: 1;
+}
+.btn-primary-color {
+    background-color: rgba(var(--primary-color), 1);
+    color: #ffffff !important;
+}
+.btn-primary-color:hover {
+    background-color: rgba(var(--primary-color), 0.85) !important;
+}
+.btn-primary-color:active, .btn-primary-color:focus {
+    background-color: rgba(var(--primary-color), 1) !important;
+}
+.btn-secondary-color {
+    background-color: rgba(var(--secondary-color), 1);
+    color: #ffffff !important;
+}
+.btn-secondary-color:hover {
+    background-color: rgba(var(--secondary-color), 0.85) !important;
+}
+.btn-secondary-color:active, .btn-secondary-color:focus {
+    background-color: rgba(var(--secondary-color), 1) !important;
+}
+.table tr td, .table tr th {
+    background-color: rgba(255, 255, 255, 0.55);
+    color: rgba(var(--primary-color), 1);
+}
+.table tr th {
+    font-weight: 500;
+}
+.table thead tr th {
+    background-color: rgba(var(--primary-color), 1);
+    color: #ffffff;
+}
+.bg-primary-color {
+    background-color: rgba(var(--primary-color), 1);
+}
+.bg-secondary-color {
+    background-color: rgba(var(--secondary-color), 1) !important;
+}
+/****************************  Menú Navegación  ******************************/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: auto;
+}
+.navbar ul {
+    display: flex;
+    padding-left: 0;
+    flex-wrap: wrap;
+}
+.container .navbar {
+    justify-content: space-between;
+}
+.navbar ul li {
+    list-style-type: none;
+}
+.container .navbar ul li {
+    padding: 10px;
+    margin: 0 10px;
+}
+.navbar a {
+    color: rgba(var(--primary-color), 1);
+    font-weight: 500;
+}
+.navbar a:hover {
+    color: rgba(var(--primary-color), 0.7);
+}
+/****************************   Carousel   *****************************/
+.carousel-item {
+    height: 40vh;
+    transition: transform 0.700s ease-out;
+}
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+}
+/********************************   Cards   *********************************/
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+}
+.card {
+    flex: 0 1 calc(25% - 1em);
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+.card img {
+    mask:
+        radial-gradient(18.93px at 50% calc(100% - 26.40px), #000 99%, #0000 101%) calc(50% - 22px) 0/44px 100%, radial-gradient(18.93px at 50% calc(100% + 15.40px), #0000 99%, #000 101%) 50% calc(100% - 11px)/44px 100% repeat-x;
+    -webkit-mask: radial-gradient(18.93px at 50% calc(100% - 26.40px), #000 99%, #0000 101%) calc(50% - 22px) 0/44px 100%, radial-gradient(18.93px at 50% calc(100% + 15.40px), #0000 99%, #000 101%) 50% calc(100% - 11px)/44px 100% repeat-x;
+}
+.card-body {
+    text-align: center;
+    color: rgba(var(--primary-color), 1);
+    display: flex;
+    flex-direction: column;
+}
+.card-body a.btn {
+    align-self: center;
+    margin-top: auto;
+}
+.card-title::before {
+    content: url("../img/text-ornament.svg");
+    display: inline-block;
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+.card-title::after {
+    content: url("../img/text-ornament-end.svg");
+    display: inline-block;
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+a.ver-mas {
+    margin-bottom: 30px;
+}
+/********************************   Reseñas   *********************************/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    gap: 20px;
+}
+.grid-item {
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grid-item h4 {
+    font-weight: 500 !important;
+    margin-top: 12.5px;
+}
+.grid-item p {
+    padding: 1.75rem;
+    font-style: italic;
+    font-weight: 300;
+    background-color: rgba(255, 255, 255, 0.55);
+    flex: 1;
+    align-content: center;
+    border-radius: 7px;
+}
+.grid-item p::before {
+    content: "«";
+    color: rgba(var(--secondary-color), 1);
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 30px;
+    transform: scale(3) translateY(-1.25px);
+}
+.grid-item p::after {
+    content: "»";
+    color: rgba(var(--secondary-color), 1);
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 30px;
+    transform: scale(3) translateY(-0.75px);
+    float: right;
+}
+/****************************   Footer   *****************************/
+footer .row-flex {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+}
+footer .column {
+    flex: 0 1 calc(25% - 1em);
+}
+/****************************   Contact   *****************************/
+.responsive-form {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.55);
+    padding: 25px;
+}
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form-container-label {
+    text-align: left;
+    min-width: 25%;
+    margin-bottom: 10px;
+    flex: 1;
+}
+.form-container-input {
+    flex: 1;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    min-width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    color: rgba(var(--primary-color), 1);
+}
+.form-container-input:focus {
+    outline: 1px solid rgba(var(--secondary-color), 1);
+}
+.form-btn {
+    width: 100%;
+    cursor: pointer;
+    flex: 1;
+    margin-top: 15px;
+}
+/****************************   Mi Compra   *****************************/
+.mi-compra.table img {
+    padding: 10px;
+    max-width: 150px;
+    height: auto;
+    border-radius: 15px;
+}
+.mi-compra.table tfoot {
+    border-top: 2px solid rgba(var(--primary-color), 0.75);
+}
+.mi-compra.table i.fa-solid {
+    color: rgba(var(--primary-color), 1)
+}
+/****************************   Media Queries   *****************************/
+@media screen and (max-width: 767.98px) {
+    .card {
+        flex: 0 1 calc(50% - 2em);
+    }
+    .mi-compra.table img {
+        display: none;
+    }
+    .mi-compra.table .cantidad {
+        display: flex;
+        flex-direction: column;
+    }
+    .mi-compra.table .cantidad button {
+        margin: 0 !important;
+        align-self: center;
+    }
+}
+@media screen and (max-width: 575.98px) {
+    .container .navbar, .cards, .row-flex {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .container .navbar {
+        gap: 15px;
+    }
+    .card {
+        flex: 0 1 calc(100% - 2em);
+    }
+    footer .column {
+        flex: 0 1 calc(100% - 2em);
+    }
+    footer .row-flex, address {
+        text-align: center;
+    }
+    .form-container-label, .form-container-input, .form-btn {
+        flex: 100%;
+        min-width: 100%;
+    }
+}
